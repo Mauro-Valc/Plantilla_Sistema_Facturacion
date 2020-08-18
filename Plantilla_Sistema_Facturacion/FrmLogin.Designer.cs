@@ -39,12 +39,12 @@
             // 
             this.lblInicioDeSesion.AutoSize = true;
             this.lblInicioDeSesion.Depth = 0;
-            this.lblInicioDeSesion.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInicioDeSesion.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblInicioDeSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblInicioDeSesion.Location = new System.Drawing.Point(71, 38);
+            this.lblInicioDeSesion.Location = new System.Drawing.Point(98, 59);
             this.lblInicioDeSesion.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblInicioDeSesion.Name = "lblInicioDeSesion";
-            this.lblInicioDeSesion.Size = new System.Drawing.Size(158, 34);
+            this.lblInicioDeSesion.Size = new System.Drawing.Size(94, 19);
             this.lblInicioDeSesion.TabIndex = 0;
             this.lblInicioDeSesion.Text = "Inicia sesión";
             // 
@@ -86,28 +86,30 @@
             // 
             // btnIngresar
             // 
+            this.btnIngresar.AutoSize = true;
             this.btnIngresar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnIngresar.Depth = 0;
             this.btnIngresar.Icon = null;
-            this.btnIngresar.Location = new System.Drawing.Point(12, 233);
+            this.btnIngresar.Location = new System.Drawing.Point(102, 238);
             this.btnIngresar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Primary = true;
-            this.btnIngresar.Size = new System.Drawing.Size(276, 36);
+            this.btnIngresar.Size = new System.Drawing.Size(86, 36);
             this.btnIngresar.TabIndex = 3;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
             // 
             // btnSalir
             // 
+            this.btnSalir.AutoSize = true;
             this.btnSalir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSalir.Depth = 0;
             this.btnSalir.Icon = null;
-            this.btnSalir.Location = new System.Drawing.Point(12, 296);
+            this.btnSalir.Location = new System.Drawing.Point(115, 306);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Primary = true;
-            this.btnSalir.Size = new System.Drawing.Size(276, 36);
+            this.btnSalir.Size = new System.Drawing.Size(58, 36);
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
