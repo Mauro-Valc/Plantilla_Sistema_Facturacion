@@ -39,12 +39,12 @@
             // 
             this.lblInicioDeSesion.AutoSize = true;
             this.lblInicioDeSesion.Depth = 0;
-            this.lblInicioDeSesion.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblInicioDeSesion.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInicioDeSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblInicioDeSesion.Location = new System.Drawing.Point(98, 59);
+            this.lblInicioDeSesion.Location = new System.Drawing.Point(65, 56);
             this.lblInicioDeSesion.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblInicioDeSesion.Name = "lblInicioDeSesion";
-            this.lblInicioDeSesion.Size = new System.Drawing.Size(94, 19);
+            this.lblInicioDeSesion.Size = new System.Drawing.Size(168, 29);
             this.lblInicioDeSesion.TabIndex = 0;
             this.lblInicioDeSesion.Text = "Inicia sesión";
             // 
@@ -63,7 +63,6 @@
             this.txtUsuario.Size = new System.Drawing.Size(276, 23);
             this.txtUsuario.TabIndex = 1;
             this.txtUsuario.TabStop = false;
-            this.txtUsuario.Text = "Usuario";
             this.txtUsuario.UseSystemPasswordChar = false;
             // 
             // txtPassword
@@ -81,7 +80,6 @@
             this.txtPassword.Size = new System.Drawing.Size(276, 23);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.TabStop = false;
-            this.txtPassword.Text = "Password";
             this.txtPassword.UseSystemPasswordChar = false;
             // 
             // btnIngresar
