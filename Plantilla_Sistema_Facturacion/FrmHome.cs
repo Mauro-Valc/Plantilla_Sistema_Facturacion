@@ -18,5 +18,22 @@ namespace Plantilla_Sistema_Facturacion
         {
             InitializeComponent();
         }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            FrmCustomer FrmCustomer = new FrmCustomer();
+            openForm(FrmCustomer);
+        }
+
+        private void openForm(Form form)
+        {
+            if (this.PnlContenedor.Controls.Count > 0)
+                this.PnlContenedor.Controls.RemoveAt(0);
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            this.PnlContenedor.Controls.Add(form);
+            form.Show();
+        }
     }
 }
