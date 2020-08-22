@@ -35,5 +35,10 @@ namespace Plantilla_Sistema_Facturacion
             this.PnlContenedor.Controls.Add(form);
             form.Show();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
