@@ -21,5 +21,29 @@ namespace Plantilla_Sistema_Facturacion
         {
             Application.Exit();
         }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            FrmHome fromHome;
+            String username, password;
+            username = txtUsuario.Text;
+            password = txtPassword.Text;
+            try
+            {
+                if (username == String.Empty || password == String.Empty)
+                    throw new Exception("Debe ingresar datos");
+
+                if (username != "admin" && password != "admin")
+                    throw new Exception("Los datos ingresados no generan resultados");
+
+                fromHome = new FrmHome();
+                fromHome.Show();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
     }
 }

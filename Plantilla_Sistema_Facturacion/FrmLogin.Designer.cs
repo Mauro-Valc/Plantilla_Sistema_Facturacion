@@ -39,12 +39,12 @@
             // 
             this.lblInicioDeSesion.AutoSize = true;
             this.lblInicioDeSesion.Depth = 0;
-            this.lblInicioDeSesion.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInicioDeSesion.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblInicioDeSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblInicioDeSesion.Location = new System.Drawing.Point(65, 56);
             this.lblInicioDeSesion.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblInicioDeSesion.Name = "lblInicioDeSesion";
-            this.lblInicioDeSesion.Size = new System.Drawing.Size(168, 29);
+            this.lblInicioDeSesion.Size = new System.Drawing.Size(94, 19);
             this.lblInicioDeSesion.TabIndex = 0;
             this.lblInicioDeSesion.Text = "Inicia sesión";
             // 
@@ -96,6 +96,7 @@
             this.btnIngresar.TabIndex = 3;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // btnSalir
             // 
