@@ -34,38 +34,38 @@
             this.TbpMenu = new MaterialSkin.Controls.MaterialTabControl();
             this.Principal = new System.Windows.Forms.TabPage();
             this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Tabla = new System.Windows.Forms.TabPage();
             this.btnCategorias = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnProductos = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnCliente = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Facturación = new System.Windows.Forms.TabPage();
             this.btnInformes = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnFacturas = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.Seguridad = new System.Windows.Forms.TabPage();
             this.btnSeguridad = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnRoles = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnEmpleados = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.Acerca = new System.Windows.Forms.TabPage();
             this.btnAcercaDe = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnAyuda = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.TabOpcionesMenu = new MaterialSkin.Controls.MaterialTabSelector();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pnPrincipal.SuspendLayout();
             this.pnMenu.SuspendLayout();
             this.TbpMenu.SuspendLayout();
             this.Principal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Tabla.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.Facturación.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.Seguridad.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.Acerca.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,16 +140,6 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Plantilla_Sistema_Facturacion.Properties.Resources.pngwing_com;
-            this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(109, 95);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // Tabla
             // 
             this.Tabla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(36)))), ((int)(((byte)(71)))));
@@ -180,6 +170,7 @@
             this.btnCategorias.Tag = "";
             this.btnCategorias.Text = "Categorías";
             this.btnCategorias.UseVisualStyleBackColor = true;
+            this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
             // 
             // btnProductos
             // 
@@ -197,6 +188,7 @@
             this.btnProductos.Tag = "";
             this.btnProductos.Text = "Productos";
             this.btnProductos.UseVisualStyleBackColor = true;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // btnCliente
             // 
@@ -215,16 +207,6 @@
             this.btnCliente.Text = "Clientes";
             this.btnCliente.UseVisualStyleBackColor = true;
             this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Plantilla_Sistema_Facturacion.Properties.Resources.pngwing_com;
-            this.pictureBox2.Location = new System.Drawing.Point(-1, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(109, 95);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
             // 
             // Facturación
             // 
@@ -254,6 +236,7 @@
             this.btnInformes.Tag = "";
             this.btnInformes.Text = "Informes";
             this.btnInformes.UseVisualStyleBackColor = true;
+            this.btnInformes.Click += new System.EventHandler(this.btnInformes_Click);
             // 
             // btnFacturas
             // 
@@ -271,16 +254,7 @@
             this.btnFacturas.Tag = "";
             this.btnFacturas.Text = "Facturas";
             this.btnFacturas.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Plantilla_Sistema_Facturacion.Properties.Resources.pngwing_com;
-            this.pictureBox3.Location = new System.Drawing.Point(-1, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(109, 95);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
+            this.btnFacturas.Click += new System.EventHandler(this.btnFacturas_Click);
             // 
             // Seguridad
             // 
@@ -311,6 +285,7 @@
             this.btnSeguridad.Tag = "";
             this.btnSeguridad.Text = "Seguridad";
             this.btnSeguridad.UseVisualStyleBackColor = true;
+            this.btnSeguridad.Click += new System.EventHandler(this.btnSeguridad_Click);
             // 
             // btnRoles
             // 
@@ -328,6 +303,7 @@
             this.btnRoles.Tag = "";
             this.btnRoles.Text = "Roles";
             this.btnRoles.UseVisualStyleBackColor = true;
+            this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
             // 
             // btnEmpleados
             // 
@@ -345,16 +321,7 @@
             this.btnEmpleados.Tag = "";
             this.btnEmpleados.Text = "Empleados";
             this.btnEmpleados.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Plantilla_Sistema_Facturacion.Properties.Resources.pngwing_com;
-            this.pictureBox4.Location = new System.Drawing.Point(-1, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(109, 95);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 1;
-            this.pictureBox4.TabStop = false;
+            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
             // 
             // Acerca
             // 
@@ -384,6 +351,7 @@
             this.btnAcercaDe.Tag = "";
             this.btnAcercaDe.Text = "Acerca de...";
             this.btnAcercaDe.UseVisualStyleBackColor = true;
+            this.btnAcercaDe.Click += new System.EventHandler(this.btnAcercaDe_Click);
             // 
             // btnAyuda
             // 
@@ -401,16 +369,7 @@
             this.btnAyuda.Tag = "";
             this.btnAyuda.Text = "Ayuda";
             this.btnAyuda.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::Plantilla_Sistema_Facturacion.Properties.Resources.pngwing_com;
-            this.pictureBox5.Location = new System.Drawing.Point(-1, 0);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(109, 95);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 1;
-            this.pictureBox5.TabStop = false;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
             // 
             // TabOpcionesMenu
             // 
@@ -422,6 +381,56 @@
             this.TabOpcionesMenu.Size = new System.Drawing.Size(728, 34);
             this.TabOpcionesMenu.TabIndex = 1;
             this.TabOpcionesMenu.Text = "materialTabSelector1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Plantilla_Sistema_Facturacion.Properties.Resources.pngwing_com;
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(109, 95);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Plantilla_Sistema_Facturacion.Properties.Resources.pngwing_com;
+            this.pictureBox2.Location = new System.Drawing.Point(-1, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(109, 95);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Plantilla_Sistema_Facturacion.Properties.Resources.pngwing_com;
+            this.pictureBox3.Location = new System.Drawing.Point(-1, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(109, 95);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Plantilla_Sistema_Facturacion.Properties.Resources.pngwing_com;
+            this.pictureBox4.Location = new System.Drawing.Point(-1, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(109, 95);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 1;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::Plantilla_Sistema_Facturacion.Properties.Resources.pngwing_com;
+            this.pictureBox5.Location = new System.Drawing.Point(-1, 0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(109, 95);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 1;
+            this.pictureBox5.TabStop = false;
             // 
             // FrmHome
             // 
@@ -438,18 +447,18 @@
             this.TbpMenu.ResumeLayout(false);
             this.Principal.ResumeLayout(false);
             this.Principal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Tabla.ResumeLayout(false);
             this.Tabla.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.Facturación.ResumeLayout(false);
             this.Facturación.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.Seguridad.ResumeLayout(false);
             this.Seguridad.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.Acerca.ResumeLayout(false);
             this.Acerca.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 

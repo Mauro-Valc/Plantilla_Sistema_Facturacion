@@ -91,7 +91,7 @@
             // TxtBuscarEmpleado
             // 
             this.TxtBuscarEmpleado.Depth = 0;
-            this.TxtBuscarEmpleado.Hint = "Buscar producto";
+            this.TxtBuscarEmpleado.Hint = "Buscar Empleado";
             this.TxtBuscarEmpleado.Location = new System.Drawing.Point(37, 25);
             this.TxtBuscarEmpleado.MaxLength = 32767;
             this.TxtBuscarEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
