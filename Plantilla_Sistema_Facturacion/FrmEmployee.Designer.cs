@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgEmployee = new System.Windows.Forms.DataGridView();
             this.BtnBuscar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.TxtBuscarEmpleado = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.BtnEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -37,27 +38,30 @@
             this.BtnNuevo = new MaterialSkin.Controls.MaterialRaisedButton();
             this.LblAdministracionEmpleados = new MaterialSkin.Controls.MaterialLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtRetiro = new System.Windows.Forms.DateTimePicker();
+            this.LblFechaRetiro = new MaterialSkin.Controls.MaterialLabel();
+            this.dtIngreso = new System.Windows.Forms.DateTimePicker();
+            this.LblFechaIngreso = new MaterialSkin.Controls.MaterialLabel();
             this.LblDatosAdicionales = new MaterialSkin.Controls.MaterialLabel();
             this.LblRolEmpleado = new MaterialSkin.Controls.MaterialLabel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cbRole = new System.Windows.Forms.ComboBox();
+            this.txtDatosAdicionales = new System.Windows.Forms.TextBox();
             this.TxtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.TxtTelefono = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.TxtDireccion = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.TxtDocumento = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtNombreEmpleado = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.LblFechaIngreso = new MaterialSkin.Controls.MaterialLabel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.LblFechaRetiro = new MaterialSkin.Controls.MaterialLabel();
+            this.TxtIdEmployee = new System.Windows.Forms.TextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgEmployee)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.dgEmployee);
             this.panel2.Controls.Add(this.BtnBuscar);
             this.panel2.Controls.Add(this.TxtBuscarEmpleado);
             this.panel2.Location = new System.Drawing.Point(47, 349);
@@ -65,13 +69,14 @@
             this.panel2.Size = new System.Drawing.Size(601, 263);
             this.panel2.TabIndex = 16;
             // 
-            // dataGridView1
+            // dgEmployee
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 67);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(510, 173);
-            this.dataGridView1.TabIndex = 9;
+            this.dgEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgEmployee.Location = new System.Drawing.Point(37, 67);
+            this.dgEmployee.Name = "dgEmployee";
+            this.dgEmployee.Size = new System.Drawing.Size(510, 173);
+            this.dgEmployee.TabIndex = 9;
+            this.dgEmployee.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgEmployee_CellMouseClick);
             // 
             // BtnBuscar
             // 
@@ -134,6 +139,7 @@
             this.BtnActualizar.TabIndex = 14;
             this.BtnActualizar.Text = "Actualizar";
             this.BtnActualizar.UseVisualStyleBackColor = true;
+            this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
             // 
             // BtnNuevo
             // 
@@ -165,14 +171,15 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Controls.Add(this.TxtIdEmployee);
+            this.panel1.Controls.Add(this.dtRetiro);
             this.panel1.Controls.Add(this.LblFechaRetiro);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.dtIngreso);
             this.panel1.Controls.Add(this.LblFechaIngreso);
             this.panel1.Controls.Add(this.LblDatosAdicionales);
             this.panel1.Controls.Add(this.LblRolEmpleado);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.cbRole);
+            this.panel1.Controls.Add(this.txtDatosAdicionales);
             this.panel1.Controls.Add(this.TxtEmail);
             this.panel1.Controls.Add(this.TxtTelefono);
             this.panel1.Controls.Add(this.TxtDireccion);
@@ -182,6 +189,46 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(601, 263);
             this.panel1.TabIndex = 11;
+            // 
+            // dtRetiro
+            // 
+            this.dtRetiro.Location = new System.Drawing.Point(325, 146);
+            this.dtRetiro.Name = "dtRetiro";
+            this.dtRetiro.Size = new System.Drawing.Size(200, 20);
+            this.dtRetiro.TabIndex = 27;
+            // 
+            // LblFechaRetiro
+            // 
+            this.LblFechaRetiro.AutoSize = true;
+            this.LblFechaRetiro.Depth = 0;
+            this.LblFechaRetiro.Font = new System.Drawing.Font("Roboto", 11F);
+            this.LblFechaRetiro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.LblFechaRetiro.Location = new System.Drawing.Point(321, 121);
+            this.LblFechaRetiro.MouseState = MaterialSkin.MouseState.HOVER;
+            this.LblFechaRetiro.Name = "LblFechaRetiro";
+            this.LblFechaRetiro.Size = new System.Drawing.Size(93, 19);
+            this.LblFechaRetiro.TabIndex = 26;
+            this.LblFechaRetiro.Text = "Fecha Retiro";
+            // 
+            // dtIngreso
+            // 
+            this.dtIngreso.Location = new System.Drawing.Point(325, 84);
+            this.dtIngreso.Name = "dtIngreso";
+            this.dtIngreso.Size = new System.Drawing.Size(200, 20);
+            this.dtIngreso.TabIndex = 25;
+            // 
+            // LblFechaIngreso
+            // 
+            this.LblFechaIngreso.AutoSize = true;
+            this.LblFechaIngreso.Depth = 0;
+            this.LblFechaIngreso.Font = new System.Drawing.Font("Roboto", 11F);
+            this.LblFechaIngreso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.LblFechaIngreso.Location = new System.Drawing.Point(321, 59);
+            this.LblFechaIngreso.MouseState = MaterialSkin.MouseState.HOVER;
+            this.LblFechaIngreso.Name = "LblFechaIngreso";
+            this.LblFechaIngreso.Size = new System.Drawing.Size(103, 19);
+            this.LblFechaIngreso.TabIndex = 12;
+            this.LblFechaIngreso.Text = "Fecha Ingreso";
             // 
             // LblDatosAdicionales
             // 
@@ -209,20 +256,20 @@
             this.LblRolEmpleado.TabIndex = 10;
             this.LblRolEmpleado.Text = "Rol Empleado";
             // 
-            // comboBox1
+            // cbRole
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(464, 30);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 9;
+            this.cbRole.FormattingEnabled = true;
+            this.cbRole.Location = new System.Drawing.Point(464, 30);
+            this.cbRole.Name = "cbRole";
+            this.cbRole.Size = new System.Drawing.Size(121, 21);
+            this.cbRole.TabIndex = 9;
             // 
-            // textBox1
+            // txtDatosAdicionales
             // 
-            this.textBox1.Location = new System.Drawing.Point(325, 204);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(260, 20);
-            this.textBox1.TabIndex = 8;
+            this.txtDatosAdicionales.Location = new System.Drawing.Point(325, 204);
+            this.txtDatosAdicionales.Name = "txtDatosAdicionales";
+            this.txtDatosAdicionales.Size = new System.Drawing.Size(260, 20);
+            this.txtDatosAdicionales.TabIndex = 8;
             // 
             // TxtEmail
             // 
@@ -309,45 +356,17 @@
             this.txtNombreEmpleado.TabStop = false;
             this.txtNombreEmpleado.UseSystemPasswordChar = false;
             // 
-            // LblFechaIngreso
+            // TxtIdEmployee
             // 
-            this.LblFechaIngreso.AutoSize = true;
-            this.LblFechaIngreso.Depth = 0;
-            this.LblFechaIngreso.Font = new System.Drawing.Font("Roboto", 11F);
-            this.LblFechaIngreso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LblFechaIngreso.Location = new System.Drawing.Point(321, 59);
-            this.LblFechaIngreso.MouseState = MaterialSkin.MouseState.HOVER;
-            this.LblFechaIngreso.Name = "LblFechaIngreso";
-            this.LblFechaIngreso.Size = new System.Drawing.Size(103, 19);
-            this.LblFechaIngreso.TabIndex = 12;
-            this.LblFechaIngreso.Text = "Fecha Ingreso";
+            this.TxtIdEmployee.Location = new System.Drawing.Point(37, -1);
+            this.TxtIdEmployee.Name = "TxtIdEmployee";
+            this.TxtIdEmployee.Size = new System.Drawing.Size(100, 20);
+            this.TxtIdEmployee.TabIndex = 17;
+            this.TxtIdEmployee.Visible = false;
             // 
-            // dateTimePicker1
+            // errorProvider
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(325, 84);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 25;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(325, 146);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 27;
-            // 
-            // LblFechaRetiro
-            // 
-            this.LblFechaRetiro.AutoSize = true;
-            this.LblFechaRetiro.Depth = 0;
-            this.LblFechaRetiro.Font = new System.Drawing.Font("Roboto", 11F);
-            this.LblFechaRetiro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LblFechaRetiro.Location = new System.Drawing.Point(321, 121);
-            this.LblFechaRetiro.MouseState = MaterialSkin.MouseState.HOVER;
-            this.LblFechaRetiro.Name = "LblFechaRetiro";
-            this.LblFechaRetiro.Size = new System.Drawing.Size(93, 19);
-            this.LblFechaRetiro.TabIndex = 26;
-            this.LblFechaRetiro.Text = "Fecha Retiro";
+            this.errorProvider.ContainerControl = this;
             // 
             // FrmEmployee
             // 
@@ -362,11 +381,13 @@
             this.Controls.Add(this.panel1);
             this.Name = "FrmEmployee";
             this.Text = "FrmEmployee";
+            this.Load += new System.EventHandler(this.FrmEmployee_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgEmployee)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -375,7 +396,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgEmployee;
         private MaterialSkin.Controls.MaterialRaisedButton BtnBuscar;
         private MaterialSkin.Controls.MaterialSingleLineTextField TxtBuscarEmpleado;
         private MaterialSkin.Controls.MaterialRaisedButton BtnEliminar;
@@ -385,16 +406,18 @@
         private System.Windows.Forms.Panel panel1;
         private MaterialSkin.Controls.MaterialLabel LblDatosAdicionales;
         private MaterialSkin.Controls.MaterialLabel LblRolEmpleado;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cbRole;
+        private System.Windows.Forms.TextBox txtDatosAdicionales;
         private MaterialSkin.Controls.MaterialSingleLineTextField TxtEmail;
         private MaterialSkin.Controls.MaterialSingleLineTextField TxtTelefono;
         private MaterialSkin.Controls.MaterialSingleLineTextField TxtDireccion;
         private MaterialSkin.Controls.MaterialSingleLineTextField TxtDocumento;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreEmpleado;
         private MaterialSkin.Controls.MaterialLabel LblFechaIngreso;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtRetiro;
         private MaterialSkin.Controls.MaterialLabel LblFechaRetiro;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtIngreso;
+        private System.Windows.Forms.TextBox TxtIdEmployee;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

@@ -28,21 +28,28 @@ namespace Plantilla_Sistema_Facturacion
         {
             FrmHome fromHome;
             String username, password, response;
+            String emptyText = "";
+            DataAccess access;
             username = txtUsuario.Text;
             password = txtPassword.Text;
             try
             {
                 if (username == String.Empty || password == String.Empty)
-                    throw new Exception("Debe ingresar datos");
+                    throw new Exception("Los datos ingresados no son validos");
 
-                if (username != "admin" && password != "admin")
-                    throw new Exception("Los datos ingresados no generan resultados");
-
-                DataAccess access = new DataAccess();
+                access = new DataAccess();
                 response = access.ValidarUsuario(username, password);
+
+                if (response == emptyText)
+                {
+                    txtUsuario.Text = emptyText;
+                    txtPassword.Text = emptyText;
+                    throw new Exception("Los datos ingresados no generan resultados");
+                }
+                MessageBox.Show("Bienvenido: " + response);
                 fromHome = new FrmHome();
                 fromHome.Show();
-                this.Close();
+                this.Hide();
             }
             catch (Exception ex)
             {
