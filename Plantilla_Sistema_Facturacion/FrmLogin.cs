@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Plantilla_Sistema_Facturacion
 {
@@ -25,7 +27,7 @@ namespace Plantilla_Sistema_Facturacion
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             FrmHome fromHome;
-            String username, password;
+            String username, password, response;
             username = txtUsuario.Text;
             password = txtPassword.Text;
             try
@@ -36,6 +38,8 @@ namespace Plantilla_Sistema_Facturacion
                 if (username != "admin" && password != "admin")
                     throw new Exception("Los datos ingresados no generan resultados");
 
+                DataAccess access = new DataAccess();
+                response = access.ValidarUsuario(username, password);
                 fromHome = new FrmHome();
                 fromHome.Show();
                 this.Close();
