@@ -38,6 +38,7 @@
             this.BtnNuevo = new MaterialSkin.Controls.MaterialRaisedButton();
             this.LblAdministracionEmpleados = new MaterialSkin.Controls.MaterialLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TxtIdEmployee = new System.Windows.Forms.TextBox();
             this.dtRetiro = new System.Windows.Forms.DateTimePicker();
             this.LblFechaRetiro = new MaterialSkin.Controls.MaterialLabel();
             this.dtIngreso = new System.Windows.Forms.DateTimePicker();
@@ -51,7 +52,6 @@
             this.TxtDireccion = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.TxtDocumento = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtNombreEmpleado = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.TxtIdEmployee = new System.Windows.Forms.TextBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgEmployee)).BeginInit();
@@ -124,6 +124,7 @@
             this.BtnEliminar.TabIndex = 15;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = true;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnActualizar
             // 
@@ -155,6 +156,7 @@
             this.BtnNuevo.TabIndex = 13;
             this.BtnNuevo.Text = "Nuevo";
             this.BtnNuevo.UseVisualStyleBackColor = true;
+            this.BtnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
             // 
             // LblAdministracionEmpleados
             // 
@@ -189,6 +191,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(601, 263);
             this.panel1.TabIndex = 11;
+            // 
+            // TxtIdEmployee
+            // 
+            this.TxtIdEmployee.Location = new System.Drawing.Point(37, -1);
+            this.TxtIdEmployee.Name = "TxtIdEmployee";
+            this.TxtIdEmployee.Size = new System.Drawing.Size(100, 20);
+            this.TxtIdEmployee.TabIndex = 17;
+            this.TxtIdEmployee.Visible = false;
             // 
             // dtRetiro
             // 
@@ -355,14 +365,6 @@
             this.txtNombreEmpleado.TabIndex = 2;
             this.txtNombreEmpleado.TabStop = false;
             this.txtNombreEmpleado.UseSystemPasswordChar = false;
-            // 
-            // TxtIdEmployee
-            // 
-            this.TxtIdEmployee.Location = new System.Drawing.Point(37, -1);
-            this.TxtIdEmployee.Name = "TxtIdEmployee";
-            this.TxtIdEmployee.Size = new System.Drawing.Size(100, 20);
-            this.TxtIdEmployee.TabIndex = 17;
-            this.TxtIdEmployee.Visible = false;
             // 
             // errorProvider
             // 

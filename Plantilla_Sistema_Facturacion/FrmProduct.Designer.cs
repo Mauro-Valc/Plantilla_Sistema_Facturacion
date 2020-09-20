@@ -28,28 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.BtnEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BtnActualizar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BtnNuevo = new MaterialSkin.Controls.MaterialRaisedButton();
             this.LblAdministracionDeProductos = new MaterialSkin.Controls.MaterialLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LblDescripcionProducto = new MaterialSkin.Controls.MaterialLabel();
+            this.LblCategoria = new MaterialSkin.Controls.MaterialLabel();
+            this.CbCategoria = new System.Windows.Forms.ComboBox();
+            this.TxtDetalleProducto = new System.Windows.Forms.TextBox();
+            this.TxtRutaImagen = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.TxtCantidadStock = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.TxtPrecioVenta = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.TxtPrecioCompra = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.TxtCodigoReferencia = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtNombreProducto = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.TxtRutaImagen = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.LblCategoria = new MaterialSkin.Controls.MaterialLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DgProductos = new System.Windows.Forms.DataGridView();
             this.BtnBuscar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.TxtBuscarProducto = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.LblDescripcionProducto = new MaterialSkin.Controls.MaterialLabel();
+            this.TxtIdProducto = new System.Windows.Forms.TextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnEliminar
@@ -66,6 +70,7 @@
             this.BtnEliminar.TabIndex = 9;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = true;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnActualizar
             // 
@@ -81,6 +86,7 @@
             this.BtnActualizar.TabIndex = 8;
             this.BtnActualizar.Text = "Actualizar";
             this.BtnActualizar.UseVisualStyleBackColor = true;
+            this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
             // 
             // BtnNuevo
             // 
@@ -96,6 +102,7 @@
             this.BtnNuevo.TabIndex = 7;
             this.BtnNuevo.Text = "Nuevo";
             this.BtnNuevo.UseVisualStyleBackColor = true;
+            this.BtnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
             // 
             // LblAdministracionDeProductos
             // 
@@ -112,10 +119,11 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.TxtIdProducto);
             this.panel1.Controls.Add(this.LblDescripcionProducto);
             this.panel1.Controls.Add(this.LblCategoria);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.CbCategoria);
+            this.panel1.Controls.Add(this.TxtDetalleProducto);
             this.panel1.Controls.Add(this.TxtRutaImagen);
             this.panel1.Controls.Add(this.TxtCantidadStock);
             this.panel1.Controls.Add(this.TxtPrecioVenta);
@@ -126,6 +134,64 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(601, 263);
             this.panel1.TabIndex = 5;
+            // 
+            // LblDescripcionProducto
+            // 
+            this.LblDescripcionProducto.AutoSize = true;
+            this.LblDescripcionProducto.Depth = 0;
+            this.LblDescripcionProducto.Font = new System.Drawing.Font("Roboto", 11F);
+            this.LblDescripcionProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.LblDescripcionProducto.Location = new System.Drawing.Point(321, 125);
+            this.LblDescripcionProducto.MouseState = MaterialSkin.MouseState.HOVER;
+            this.LblDescripcionProducto.Name = "LblDescripcionProducto";
+            this.LblDescripcionProducto.Size = new System.Drawing.Size(120, 19);
+            this.LblDescripcionProducto.TabIndex = 11;
+            this.LblDescripcionProducto.Text = "Detalle producto";
+            // 
+            // LblCategoria
+            // 
+            this.LblCategoria.AutoSize = true;
+            this.LblCategoria.Depth = 0;
+            this.LblCategoria.Font = new System.Drawing.Font("Roboto", 11F);
+            this.LblCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.LblCategoria.Location = new System.Drawing.Point(321, 29);
+            this.LblCategoria.MouseState = MaterialSkin.MouseState.HOVER;
+            this.LblCategoria.Name = "LblCategoria";
+            this.LblCategoria.Size = new System.Drawing.Size(74, 19);
+            this.LblCategoria.TabIndex = 10;
+            this.LblCategoria.Text = "Categoria";
+            // 
+            // CbCategoria
+            // 
+            this.CbCategoria.FormattingEnabled = true;
+            this.CbCategoria.Location = new System.Drawing.Point(464, 30);
+            this.CbCategoria.Name = "CbCategoria";
+            this.CbCategoria.Size = new System.Drawing.Size(121, 21);
+            this.CbCategoria.TabIndex = 9;
+            // 
+            // TxtDetalleProducto
+            // 
+            this.TxtDetalleProducto.Location = new System.Drawing.Point(325, 163);
+            this.TxtDetalleProducto.Name = "TxtDetalleProducto";
+            this.TxtDetalleProducto.Size = new System.Drawing.Size(260, 20);
+            this.TxtDetalleProducto.TabIndex = 8;
+            // 
+            // TxtRutaImagen
+            // 
+            this.TxtRutaImagen.Depth = 0;
+            this.TxtRutaImagen.Hint = "Ruta imagen";
+            this.TxtRutaImagen.Location = new System.Drawing.Point(325, 76);
+            this.TxtRutaImagen.MaxLength = 32767;
+            this.TxtRutaImagen.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TxtRutaImagen.Name = "TxtRutaImagen";
+            this.TxtRutaImagen.PasswordChar = '\0';
+            this.TxtRutaImagen.SelectedText = "";
+            this.TxtRutaImagen.SelectionLength = 0;
+            this.TxtRutaImagen.SelectionStart = 0;
+            this.TxtRutaImagen.Size = new System.Drawing.Size(260, 23);
+            this.TxtRutaImagen.TabIndex = 7;
+            this.TxtRutaImagen.TabStop = false;
+            this.TxtRutaImagen.UseSystemPasswordChar = false;
             // 
             // TxtCantidadStock
             // 
@@ -212,54 +278,9 @@
             this.txtNombreProducto.TabStop = false;
             this.txtNombreProducto.UseSystemPasswordChar = false;
             // 
-            // TxtRutaImagen
-            // 
-            this.TxtRutaImagen.Depth = 0;
-            this.TxtRutaImagen.Hint = "Ruta imagen";
-            this.TxtRutaImagen.Location = new System.Drawing.Point(325, 76);
-            this.TxtRutaImagen.MaxLength = 32767;
-            this.TxtRutaImagen.MouseState = MaterialSkin.MouseState.HOVER;
-            this.TxtRutaImagen.Name = "TxtRutaImagen";
-            this.TxtRutaImagen.PasswordChar = '\0';
-            this.TxtRutaImagen.SelectedText = "";
-            this.TxtRutaImagen.SelectionLength = 0;
-            this.TxtRutaImagen.SelectionStart = 0;
-            this.TxtRutaImagen.Size = new System.Drawing.Size(260, 23);
-            this.TxtRutaImagen.TabIndex = 7;
-            this.TxtRutaImagen.TabStop = false;
-            this.TxtRutaImagen.UseSystemPasswordChar = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(325, 163);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(260, 20);
-            this.textBox1.TabIndex = 8;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(464, 30);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 9;
-            // 
-            // LblCategoria
-            // 
-            this.LblCategoria.AutoSize = true;
-            this.LblCategoria.Depth = 0;
-            this.LblCategoria.Font = new System.Drawing.Font("Roboto", 11F);
-            this.LblCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LblCategoria.Location = new System.Drawing.Point(321, 29);
-            this.LblCategoria.MouseState = MaterialSkin.MouseState.HOVER;
-            this.LblCategoria.Name = "LblCategoria";
-            this.LblCategoria.Size = new System.Drawing.Size(74, 19);
-            this.LblCategoria.TabIndex = 10;
-            this.LblCategoria.Text = "Categoria";
-            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.DgProductos);
             this.panel2.Controls.Add(this.BtnBuscar);
             this.panel2.Controls.Add(this.TxtBuscarProducto);
             this.panel2.Location = new System.Drawing.Point(73, 357);
@@ -267,13 +288,14 @@
             this.panel2.Size = new System.Drawing.Size(601, 263);
             this.panel2.TabIndex = 10;
             // 
-            // dataGridView1
+            // DgProductos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 67);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(510, 173);
-            this.dataGridView1.TabIndex = 9;
+            this.DgProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgProductos.Location = new System.Drawing.Point(37, 67);
+            this.DgProductos.Name = "DgProductos";
+            this.DgProductos.Size = new System.Drawing.Size(510, 173);
+            this.DgProductos.TabIndex = 9;
+            this.DgProductos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgProductos_CellMouseClick);
             // 
             // BtnBuscar
             // 
@@ -307,18 +329,17 @@
             this.TxtBuscarProducto.TabStop = false;
             this.TxtBuscarProducto.UseSystemPasswordChar = false;
             // 
-            // LblDescripcionProducto
+            // TxtIdProducto
             // 
-            this.LblDescripcionProducto.AutoSize = true;
-            this.LblDescripcionProducto.Depth = 0;
-            this.LblDescripcionProducto.Font = new System.Drawing.Font("Roboto", 11F);
-            this.LblDescripcionProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LblDescripcionProducto.Location = new System.Drawing.Point(321, 125);
-            this.LblDescripcionProducto.MouseState = MaterialSkin.MouseState.HOVER;
-            this.LblDescripcionProducto.Name = "LblDescripcionProducto";
-            this.LblDescripcionProducto.Size = new System.Drawing.Size(120, 19);
-            this.LblDescripcionProducto.TabIndex = 11;
-            this.LblDescripcionProducto.Text = "Detalle producto";
+            this.TxtIdProducto.Location = new System.Drawing.Point(37, 3);
+            this.TxtIdProducto.Name = "TxtIdProducto";
+            this.TxtIdProducto.Size = new System.Drawing.Size(100, 20);
+            this.TxtIdProducto.TabIndex = 11;
+            this.TxtIdProducto.Visible = false;
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // FrmProduct
             // 
@@ -333,11 +354,13 @@
             this.Controls.Add(this.panel1);
             this.Name = "FrmProduct";
             this.Text = "FrmProduct";
+            this.Load += new System.EventHandler(this.FrmProduct_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,12 +380,14 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreProducto;
         private MaterialSkin.Controls.MaterialSingleLineTextField TxtRutaImagen;
         private MaterialSkin.Controls.MaterialLabel LblCategoria;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox CbCategoria;
+        private System.Windows.Forms.TextBox TxtDetalleProducto;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DgProductos;
         private MaterialSkin.Controls.MaterialRaisedButton BtnBuscar;
         private MaterialSkin.Controls.MaterialSingleLineTextField TxtBuscarProducto;
         private MaterialSkin.Controls.MaterialLabel LblDescripcionProducto;
+        private System.Windows.Forms.TextBox TxtIdProducto;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

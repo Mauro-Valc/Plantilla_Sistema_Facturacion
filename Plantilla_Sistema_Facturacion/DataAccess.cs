@@ -89,6 +89,24 @@ namespace Plantilla_Sistema_Facturacion
 			return response;
 		}
 
+		public DataTable GetDataForQuery(string query)
+		{
+			try
+			{
+				OpenConnection();
+				dataAdapter = new SqlDataAdapter(query, connection);
+				dataTable = new DataTable();
+				dataAdapter.Fill(dataTable);
+				CloseConnection();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Falló operación: " + ex);
+				return null;
+			}
+			return dataTable;
+		}
+
 		private void OpenConnection()
 		{
 			try

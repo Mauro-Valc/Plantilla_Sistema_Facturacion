@@ -28,16 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.BtnEliminar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BtnActualizar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BtnConsultar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.LblAdministracionDeUsuariosDelSistema = new MaterialSkin.Controls.MaterialLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TxtClave = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.cbEmployee = new System.Windows.Forms.ComboBox();
             this.LblEmpleado = new MaterialSkin.Controls.MaterialLabel();
             this.TxtUsuario = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.TxtClave = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TxtIdSeguridad = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnEliminar
@@ -54,6 +58,7 @@
             this.BtnEliminar.TabIndex = 20;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = true;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnActualizar
             // 
@@ -69,6 +74,7 @@
             this.BtnActualizar.TabIndex = 19;
             this.BtnActualizar.Text = "Actualizar";
             this.BtnActualizar.UseVisualStyleBackColor = true;
+            this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
             // 
             // BtnConsultar
             // 
@@ -84,6 +90,7 @@
             this.BtnConsultar.TabIndex = 18;
             this.BtnConsultar.Text = "Consultar";
             this.BtnConsultar.UseVisualStyleBackColor = true;
+            this.BtnConsultar.Click += new System.EventHandler(this.BtnConsultar_Click);
             // 
             // LblAdministracionDeUsuariosDelSistema
             // 
@@ -100,52 +107,15 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.TxtIdSeguridad);
             this.panel1.Controls.Add(this.TxtClave);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cbEmployee);
             this.panel1.Controls.Add(this.LblEmpleado);
             this.panel1.Controls.Add(this.TxtUsuario);
             this.panel1.Location = new System.Drawing.Point(31, 67);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(601, 208);
             this.panel1.TabIndex = 16;
-            // 
-            // LblEmpleado
-            // 
-            this.LblEmpleado.AutoSize = true;
-            this.LblEmpleado.Depth = 0;
-            this.LblEmpleado.Font = new System.Drawing.Font("Roboto", 11F);
-            this.LblEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.LblEmpleado.Location = new System.Drawing.Point(33, 30);
-            this.LblEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
-            this.LblEmpleado.Name = "LblEmpleado";
-            this.LblEmpleado.Size = new System.Drawing.Size(166, 19);
-            this.LblEmpleado.TabIndex = 11;
-            this.LblEmpleado.Text = "Descripcion Detalle Rol";
-            // 
-            // TxtUsuario
-            // 
-            this.TxtUsuario.Depth = 0;
-            this.TxtUsuario.Hint = "Usuario";
-            this.TxtUsuario.Location = new System.Drawing.Point(37, 97);
-            this.TxtUsuario.MaxLength = 32767;
-            this.TxtUsuario.MouseState = MaterialSkin.MouseState.HOVER;
-            this.TxtUsuario.Name = "TxtUsuario";
-            this.TxtUsuario.PasswordChar = '\0';
-            this.TxtUsuario.SelectedText = "";
-            this.TxtUsuario.SelectionLength = 0;
-            this.TxtUsuario.SelectionStart = 0;
-            this.TxtUsuario.Size = new System.Drawing.Size(260, 23);
-            this.TxtUsuario.TabIndex = 2;
-            this.TxtUsuario.TabStop = false;
-            this.TxtUsuario.UseSystemPasswordChar = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(217, 28);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 12;
             // 
             // TxtClave
             // 
@@ -164,6 +134,56 @@
             this.TxtClave.TabStop = false;
             this.TxtClave.UseSystemPasswordChar = false;
             // 
+            // cbEmployee
+            // 
+            this.cbEmployee.FormattingEnabled = true;
+            this.cbEmployee.Location = new System.Drawing.Point(132, 31);
+            this.cbEmployee.Name = "cbEmployee";
+            this.cbEmployee.Size = new System.Drawing.Size(121, 21);
+            this.cbEmployee.TabIndex = 12;
+            // 
+            // LblEmpleado
+            // 
+            this.LblEmpleado.AutoSize = true;
+            this.LblEmpleado.Depth = 0;
+            this.LblEmpleado.Font = new System.Drawing.Font("Roboto", 11F);
+            this.LblEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.LblEmpleado.Location = new System.Drawing.Point(33, 30);
+            this.LblEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
+            this.LblEmpleado.Name = "LblEmpleado";
+            this.LblEmpleado.Size = new System.Drawing.Size(76, 19);
+            this.LblEmpleado.TabIndex = 11;
+            this.LblEmpleado.Text = "Empleado";
+            // 
+            // TxtUsuario
+            // 
+            this.TxtUsuario.Depth = 0;
+            this.TxtUsuario.Hint = "Usuario";
+            this.TxtUsuario.Location = new System.Drawing.Point(37, 97);
+            this.TxtUsuario.MaxLength = 32767;
+            this.TxtUsuario.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TxtUsuario.Name = "TxtUsuario";
+            this.TxtUsuario.PasswordChar = '\0';
+            this.TxtUsuario.SelectedText = "";
+            this.TxtUsuario.SelectionLength = 0;
+            this.TxtUsuario.SelectionStart = 0;
+            this.TxtUsuario.Size = new System.Drawing.Size(260, 23);
+            this.TxtUsuario.TabIndex = 2;
+            this.TxtUsuario.TabStop = false;
+            this.TxtUsuario.UseSystemPasswordChar = false;
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
+            // TxtIdSeguridad
+            // 
+            this.TxtIdSeguridad.Location = new System.Drawing.Point(37, 58);
+            this.TxtIdSeguridad.Name = "TxtIdSeguridad";
+            this.TxtIdSeguridad.Size = new System.Drawing.Size(100, 20);
+            this.TxtIdSeguridad.TabIndex = 14;
+            this.TxtIdSeguridad.Visible = false;
+            // 
             // FrmSecurity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,8 +196,10 @@
             this.Controls.Add(this.panel1);
             this.Name = "FrmSecurity";
             this.Text = "FrmSecurity";
+            this.Load += new System.EventHandler(this.FrmSecurity_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,6 +215,8 @@
         private MaterialSkin.Controls.MaterialLabel LblEmpleado;
         private MaterialSkin.Controls.MaterialSingleLineTextField TxtUsuario;
         private MaterialSkin.Controls.MaterialSingleLineTextField TxtClave;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbEmployee;
+        private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.TextBox TxtIdSeguridad;
     }
 }

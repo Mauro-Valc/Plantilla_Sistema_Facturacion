@@ -68,8 +68,6 @@ namespace Plantilla_Sistema_Facturacion
                 if (valitadeEmployeeForm())
                 {
                     DataAccess access = new DataAccess();
-                    Console.WriteLine(cbRole.SelectedIndex + 1);
-                    Console.WriteLine(dtIngreso.Value);
                     string command = $"exec actualizar_Empleado '{TxtIdEmployee.Text}', '{txtNombreEmpleado.Text}', '{TxtDocumento.Text}', '{TxtDireccion.Text}', '{TxtTelefono.Text}', '{TxtEmail.Text}', '{cbRole.SelectedIndex + 1}', '{dtIngreso.Value}', '{dtRetiro.Value}', '{txtDatosAdicionales.Text}', '2020-09-01', 'AdminUser'";
                     MessageBox.Show(access.RunCommand(command));
                     fillGrid();
@@ -79,7 +77,42 @@ namespace Plantilla_Sistema_Facturacion
             {
                 MessageBox.Show("fallo inserción: " + ex);
             }
+        }
 
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataAccess access = new DataAccess();
+                string command = $"exec Eliminar_Empleado '{TxtIdEmployee.Text}'";
+                MessageBox.Show(access.RunCommand(command));
+                fillGrid();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un errro no esperado durante el proceso");
+            }
+        }
+
+        private void BtnNuevo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TxtIdEmployee.Text = EMPTY_STRING;
+                txtNombreEmpleado.Text = EMPTY_STRING;
+                TxtDocumento.Text = EMPTY_STRING;
+                TxtDireccion.Text = EMPTY_STRING;
+                TxtTelefono.Text = EMPTY_STRING;
+                TxtEmail.Text = EMPTY_STRING;
+                cbRole.SelectedIndex = 0;
+                dtIngreso.Value = DateTime.Now;
+                dtRetiro.Value = Convert.ToDateTime("01/01/1900");
+                txtDatosAdicionales.Text = EMPTY_STRING;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrio un errro no esperado durante el proceso");
+            }
         }
 
         private bool valitadeEmployeeForm()
@@ -112,7 +145,7 @@ namespace Plantilla_Sistema_Facturacion
             }
             else
             {
-                errorProvider.SetError(txtNombreEmpleado, EMPTY_STRING);
+                errorProvider.SetError(txt, EMPTY_STRING);
             }
         }
 
@@ -129,5 +162,6 @@ namespace Plantilla_Sistema_Facturacion
             }
         }
 
+        
     }
 }
