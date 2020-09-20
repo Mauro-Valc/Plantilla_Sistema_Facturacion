@@ -27,7 +27,7 @@ namespace Plantilla_Sistema_Facturacion
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             FrmHome fromHome;
-            String username, password, response;
+            String username, password;
             username = txtUsuario.Text;
             password = txtPassword.Text;
             try
@@ -38,8 +38,6 @@ namespace Plantilla_Sistema_Facturacion
                 if (username != "admin" && password != "admin")
                     throw new Exception("Los datos ingresados no generan resultados");
 
-                DataAccess access = new DataAccess();
-                response = access.ValidarUsuario(username, password);
                 fromHome = new FrmHome();
                 fromHome.Show();
                 this.Close();
